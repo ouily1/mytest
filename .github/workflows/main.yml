@@ -60,4 +60,4 @@ jobs:
     
     - name: Run Docker container
       run: |
-        docker run -d --name mynginx -p 8080:8080 ouily36/githubaction:${{ steps.set_build_number.outputs.BUILD_NUMBER }}
+        docker run -d --name myapp -p 8501:8501 ouily36/githubaction:${{ steps.set_build_number.outputs.BUILD_NUMBER }}
