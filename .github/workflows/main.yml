@@ -52,12 +52,12 @@ jobs:
 
     - name: Pull Docker image from Docker Hub
       run: |
-        sudo docker pull ouily36/githubaction:${{ steps.set_build_number.outputs.BUILD_NUMBER }}
+        docker pull ouily36/githubaction:${{ steps.set_build_number.outputs.BUILD_NUMBER }}
     
     - name: Stop and remove existing container
       run: |
-        sudo docker stop mynginx || true && docker rm mynginx || true
+        docker stop mynginx || true && docker rm mynginx || true
     
     - name: Run Docker container
       run: |
-        sudo docker run -d --name mynginx -p 8080:8080 ouily36/githubaction:${{ steps.set_build_number.outputs.BUILD_NUMBER }}
+        docker run -d --name mynginx -p 8080:8080 ouily36/githubaction:${{ steps.set_build_number.outputs.BUILD_NUMBER }}
